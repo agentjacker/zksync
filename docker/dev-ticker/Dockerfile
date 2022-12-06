@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     RUSTC_WRAPPER=/usr/local/cargo/bin/sccache \
     cargo build --bin dev-ticker-server --release
 
-FROM debian:bullseye
+FROM debian:11.5
 RUN apt update
 RUN apt install openssl -y
 EXPOSE 9876
