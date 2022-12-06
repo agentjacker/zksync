@@ -5,7 +5,7 @@ COPY . .
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo build --release
 
-FROM debian:bullseye
+FROM debian:11.5
 RUN apt-get update && apt-get install -y libpq5 ca-certificates && rm -rf /var/lib/apt/lists/*
 EXPOSE 3000
 EXPOSE 3031
