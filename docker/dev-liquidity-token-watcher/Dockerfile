@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     RUSTC_WRAPPER=/usr/local/cargo/bin/sccache \
     cargo build --release
 
-FROM debian:bullseye
+FROM debian:11.5
 EXPOSE 9975
 ENV RUST_LOG info
 COPY --from=builder /usr/src/zksync/target/release/dev-liquidity-token-watcher /bin/
