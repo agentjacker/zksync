@@ -5,7 +5,7 @@ COPY . .
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo build --release
 
-FROM debian:bullseye
+FROM debian:11.5
 RUN apt-get update && apt-get install -y axel ca-certificates tini && rm -rf /var/lib/apt/lists/*
 # Docs of env variables used for this image
 # to test this locally just run
